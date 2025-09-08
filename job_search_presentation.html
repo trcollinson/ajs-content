@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding the Right Opportunities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .presentation-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 95%;
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            padding: 60px 50px;
+            min-height: 500px;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            color: #2980b9;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .slide p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .slide ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .slide li {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .success-box {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .navigation {
+            background: #34495e;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-button:hover:not(:disabled) {
+            background: #2980b9;
+        }
+        
+        .nav-button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .title-slide h1 {
+            color: white;
+            font-size: 3em;
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .title-slide p {
+            color: #f8f9fa;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .presenter-info {
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>Finding the Right Opportunities</h1>
+            <p>Strategic Job Search for Mature Professionals</p>
+            <div class="presenter-info">
+                <p><strong>Tim Collinson</strong></p>
+                <p>Chief Technology Officer of 11:59</p>
+                <p>Hiring Expert & AWS Conference Speaker</p>
+                <p>Utah North & South AJS Groups</p>
+                <p>September 2025</p>
+            </div>
+        </div>
+        
+        <!-- Slide 2: About Tim -->
+        <div class="slide">
+            <h2>👨‍💼 About Tim Collinson</h2>
+            
+            <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 30px;">
+                <div style="flex-shrink: 0;">
+                    <img src="Timothy-Collinson-square-scaled_600x600_acf_cropped_600x600_acf_cropped-150x150.jpeg" alt="Tim's Professional Photo" style="width: 200px; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ddd;">
+                </div>
+                <div style="flex: 1;">
+                    <h3>Professional Experience:</h3>
+                    <ul>
+                        <li>Managed groups with up to $1 Billion in gross revenue</li>
+                        <li>Hired hundreds of technical and business professionals</li>
+                        <li>Helped with 4 successful startup exits, one initial public offering, and numerous technology transfers</li>
+                        <li>Expert in AWS technologies including: serverless architectures, AI and Agentic technologies, and virtualization sidecar management</li>
+                        <li>Dozens of certifications with 7 active (and counting)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 30px;">
+                <div style="flex: 1;">
+                    <h3>Personal Side:</h3>
+                    <ul>
+                        <li>Father of 6 kids with 8 grandkids so far</li>
+                        <li>Been in leadership with the Church of Jesus Christ as Bishopric or Elders Quorum for 10+ years</li>
+                        <li>Avid Knitter</li>
+                        <li>Doesn't sleep much</li>
+                    </ul>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <img src="Image (1).jpeg" alt="Knitting Photo" style="width: 200px; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #ddd;">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: The Right Job vs. The Dream Job -->
+        <div class="slide">
+            <h2>🎯 The Right Job vs. The Dream Job</h2>
+            
+            <div class="highlight">
+                <h3>Key Insight:</h3>
+                <p>Targeting the "right" opportunity often leads to your dream job faster than applying directly for dream jobs.</p>
+            </div>
+            
+            <div class="two-column">
+                <div>
+                    <h3>❌ The Dream Job Trap:</h3>
+                    <ul>
+                        <li>Applying to positions 2-3 levels above your experience</li>
+                        <li>Competing with 500+ other applicants</li>
+                        <li>Getting frustrated with constant rejections</li>
+                        <li>Thinking it's just a "numbers game"</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ The Right Job Strategy:</h3>
+                    <ul>
+                        <li>Target roles where you meet 80%+ of requirements</li>
+                        <li>Get hired and prove your worth quickly</li>
+                        <li>Build internal relationships and reputation</li>
+                        <li>Move up faster from the inside</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <p><strong>Real Example:</strong> A developer coming straight out of college who has just college experience and a lot of college projects applying for roles making $80k and sometimes well into the 6 figures because their college said "they are worth it" had no luck. After targeting entry-level positions and proving himself, he received multiple interview requests within 2 weeks.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Reading Job Requirements Like a Decoder -->
+        <div class="slide">
+            <h2>🔍 Reading Job Requirements Like a Decoder</h2>
+            
+            <h3>Learning to Separate "Must Have" from "Nice to Have"</h3>
+            
+            <div class="two-column">
+                <div>
+                    <h3>🚨 Red Flags - You're Not Ready:</h3>
+                    <ul>
+                        <li>"5+ years in [specific industry]" - when you have 0</li>
+                        <li>"Expert level" or "Subject Matter Expert"</li>
+                        <li>Long list of very specific technical requirements</li>
+                        <li>Regulatory/compliance experience when it's critical</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ Green Lights - You Can Apply:</h3>
+                    <ul>
+                        <li>"3+ years experience" - often means 1-2 will work</li>
+                        <li>"Familiar with" vs. "Expert in"</li>
+                        <li>"Preferred" or "Bonus points for"</li>
+                        <li>Skills you can learn quickly on the job</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h3>The 11:59 Over-Extension Example:</h3>
+                <p>A candidate applied claiming IIS (Immunization Information System) subject matter experience and rated their C/C++ skills as 9 out of 10. They got the interview, but when answering technical questions, it became obvious they had overstated their qualifications. The interview ended early - honesty in self-assessment is crucial.</p>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Pro Tip:</strong> If you meet 70-80% of the requirements and the missing pieces are learnable, apply. Companies often hire for potential, not perfection.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 5: The Experience Translation Problem -->
+        <div class="slide">
+            <h2>🔄 The Experience Translation Problem</h2>
+            
+            <div class="highlight">
+                <h3>The Hard Truth:</h3>
+                <p>Your skills don't automatically equal seniority in a new field or industry.</p>
+            </div>
+            
+            <h3>Why This Happens:</h3>
+            <ul>
+                <li><strong>Industry Context Matters:</strong> 15 years in manufacturing ≠ 15 years in fintech</li>
+                <li><strong>Technology Evolution:</strong> Your React skills from 2019 need updating</li>
+                <li><strong>Company Culture:</strong> Each organization has its own way of doing things</li>
+                <li><strong>Stakeholder Relationships:</strong> You need to rebuild your professional network</li>
+            </ul>
+            
+            <div class="two-column">
+                <div class="warning-box">
+                    <h3>❌ What Doesn't Work:</h3>
+                    <ul>
+                        <li>Assuming your title transfers directly</li>
+                        <li>Only highlighting years of experience</li>
+                        <li>Expecting to start at the same level immediately</li>
+                        <li>Dismissing "entry-level" opportunities</li>
+                    </ul>
+                </div>
+                <div class="success-box">
+                    <h3>✅ What Works:</h3>
+                    <ul>
+                        <li>Focus on transferable skills</li>
+                        <li>Show willingness to learn industry specifics</li>
+                        <li>Consider lateral or slight step-back moves</li>
+                        <li>Emphasize your ability to ramp up quickly</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="success-box">
+                <p><strong>Remember:</strong> Taking a strategic step back often leads to faster advancement than struggling to maintain an unsustainable level.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Your Three-Message Consistency Check -->
+        <div class="slide">
+            <h2>📱 Your Three-Message Consistency Check</h2>
+            
+            <div class="highlight">
+                <h3>The Golden Rule:</h3>
+                <p>Your LinkedIn profile, resume, and interview story must tell the same level story.</p>
+            </div>
+            
+            <h3>The Three Channels That Must Align:</h3>
+            
+            <div style="margin: 30px 0;">
+                <h3>1. 💼 LinkedIn Profile</h3>
+                <ul>
+                    <li><strong>Headline:</strong> Describe skills you bring, not the title you want</li>
+                    <li><strong>Summary:</strong> Match the level you're actually targeting</li>
+                    <li><strong>Experience:</strong> Emphasize relevant skills for your target role</li>
+                </ul>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <h3>2. 📄 Resume</h3>
+                <ul>
+                    <li>Mirror the language from job postings you're applying to</li>
+                    <li>Quantify achievements at the appropriate level</li>
+                    <li>Remove or de-emphasize experience that suggests overqualification</li>
+                </ul>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <h3>3. 🎤 Interview Story</h3>
+                <ul>
+                    <li>Explain your career transition confidently</li>
+                    <li>Show enthusiasm for the level you're targeting</li>
+                    <li>Avoid language that suggests you're "settling"</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <p><strong>Real Problem:</strong> A talented developer with strong coding abilities convinced himself he should be "in management." Since he lacked development management experience, he pivoted his messaging toward project management because it seemed "easier to explain in interviews." His LinkedIn highlighted PM skills, his resume emphasized coordination over coding, and his interview stories focused on meetings and timelines rather than technical achievements. Result? He didn't land any positions because employers couldn't tell if he wanted to code or manage - his mixed messaging made him appear unfocused and unclear about his career direction.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 7: When to Network Up vs. Apply Direct -->
+        <div class="slide">
+            <h2>🤝 When to Network Up vs. Apply Direct</h2>
+            
+            <div class="two-column">
+                <div style="background: #e8f4fd; padding: 20px; border-radius: 8px;">
+                    <h3>🎯 Direct Applications Work For:</h3>
+                    <ul>
+                        <li><strong>Entry to Mid-Level Roles</strong></li>
+                        <li>Individual contributor positions</li>
+                        <li>Clear skill requirements you meet</li>
+                        <li>High-volume hiring (junior developers, analysts)</li>
+                        <li>Companies with structured recruiting processes</li>
+                    </ul>
+                </div>
+                <div style="background: #fff3e0; padding: 20px; border-radius: 8px;">
+                    <h3>🤝 Networking Essential For:</h3>
+                    <ul>
+                        <li><strong>Director+ Level Positions</strong></li>
+                        <li>VP, AVP, Senior Manager roles</li>
+                        <li>Career pivots into new industries</li>
+                        <li>Competitive, relationship-based fields</li>
+                        <li>Small companies or specialized roles</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>The Networking Strategy for Senior Roles:</h3>
+                <p>Before applying, conduct informational interviews to understand:</p>
+                <ul>
+                    <li>Where your experience would fit in their organization</li>
+                    <li>What level entry point makes sense for your background</li>
+                    <li>Who the key decision-makers are</li>
+                    <li>What the company culture and expectations really are</li>
+                </ul>
+            </div>
+            
+            <div class="success-box">
+                <p><strong>Why This Matters:</strong> At senior levels, companies aren't just hiring skills - they're hiring judgment, leadership, and cultural fit. These qualities are nearly impossible to assess from a resume alone.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 8: The 'Paying Your Dues' Strategy -->
+        <div class="slide">
+            <h2>⚡ The 'Paying Your Dues' Strategy</h2>
+            
+            <div class="highlight">
+                <h3>The Counter-Intuitive Truth:</h3>
+                <p>Sometimes taking a step back leads to faster advancement than trying to maintain an unsustainable level.</p>
+            </div>
+            
+            <h3>When This Strategy Works Best:</h3>
+            <ul>
+                <li>You're changing industries or functions</li>
+                <li>You have skills but lack recent, relevant experience</li>
+                <li>You've been unemployed for an extended period</li>
+                <li>You need to rebuild your professional credibility</li>
+            </ul>
+            
+            <div class="two-column">
+                <div>
+                    <h3>❌ How NOT to Frame It:</h3>
+                    <ul>
+                        <li>"I'm willing to take a step down"</li>
+                        <li>"I know this is below my level, but..."</li>
+                        <li>"I'm overqualified, but I need a job"</li>
+                        <li>"This is temporary until something better opens up"</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ How to Frame It Positively:</h3>
+                    <ul>
+                        <li>"I'm excited to get hands-on with..."</li>
+                        <li>"This role lets me focus on what I love most..."</li>
+                        <li>"I want to learn your industry from the ground up"</li>
+                        <li>"I see this as an investment in my long-term growth"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h3>The Construction-to-Code Success Story:</h3>
+                <p>A general contractor with concrete experience taught himself programming while supporting his family. Initially, he targeted software management positions, thinking his construction leadership would translate - it didn't. Next, he applied for junior developer roles but approached them with resentment about "starting over." When he finally embraced a paid internship with genuine enthusiasm and humility, everything changed. His eagerness to learn and strong work ethic quickly set him apart. Ten years later, he's now a Vice President at a tech company - proving that the right attitude at the right level can lead to extraordinary advancement.</p>
+            </div>
+            
+            <div class="warning-box">
+                <p><strong>Key Point:</strong> Companies can sense when you're genuinely excited about the role versus when you're "settling." Your enthusiasm for the actual work matters more than your previous title.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Thank You & Questions -->
+        <div class="slide">
+            <h2>🙏 Thank You & Questions</h2>
+            
+            <div class="highlight">
+                <h3>Key Takeaways:</h3>
+                <ul>
+                    <li>Target the "right" job, not just the "dream" job</li>
+                    <li>Decode job requirements honestly</li>
+                    <li>Your experience may not translate directly - and that's okay</li>
+                    <li>Keep your messaging consistent across all platforms</li>
+                    <li>Know when to network vs. when to apply direct</li>
+                    <li>Sometimes stepping back strategically moves you forward faster</li>
+                </ul>
+            </div>
+            
+            <h3>Questions & Discussion</h3>
+            <p>Please ask anything about job search strategy, career transitions, or hiring perspectives...</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #6c757d;">
+                <h3>Sample Questions:</h3>
+                <ul style="margin-top: 15px;">
+                    <li>"How do I get your job?"</li>
+                    <li>"Can I work for you?"</li>
+                    <li>"Do you have any hair care tips?"</li>
+                    <li>"What is a sidecar and how does that work in ECS vs EKS?"</li>
+                    <li>"What left leaning decrease would you suggest for invisible shaping in a mens garment?"</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Contact:</strong> Tim Collinson</p>
+                <p>Chief Technology Officer, 11:59</p>
+                <p>Happy to connect on LinkedIn!</p>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> of <span id="totalSlides">9</span>
+            </span>
+            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+        
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex < 0) currentSlideIndex = 0;
+            if (currentSlideIndex >= totalSlides) currentSlideIndex = totalSlides - 1;
+            showSlide(currentSlideIndex);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
