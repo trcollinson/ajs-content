@@ -15,6 +15,7 @@ class StaticSiteStack extends Stack {
     const siteBucket = new s3.Bucket(this, 'SiteBucket', {
       bucketName: 'ajs-content-site-bucket',
       websiteIndexDocument: 'job_search_presentation.html',
+      websiteErrorDocument: 'job_search_presentation.html',
       publicReadAccess: true,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS,
       removalPolicy: RemovalPolicy.DESTROY,
@@ -34,7 +35,9 @@ class StaticSiteStack extends Stack {
     // CloudFront distribution
     const distribution = new cloudfront.Distribution(this, 'SiteDistribution', {
       defaultBehavior: {
-        origin: new origins.HttpOrigin(siteBucket.bucketWebsiteDomainName),
+        origin: new origins.HttpOrigin(siteBucket.bucketWebsiteDomainName, {
+          protocolPolicy: cloudfront.OriginProtocolPolicy.HTTP_ONLY,
+        }),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       domainNames: ['ajs.rdtechnical.com'],
